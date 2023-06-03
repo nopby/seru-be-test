@@ -1,9 +1,14 @@
-﻿namespace Seru.BackendTest.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Seru.BackendTest.Models;
 
 
 public class Entity
 {
-    public required int Id { get; init; }
-    public required DateTime Created_At { get; init; } = DateTime.UtcNow;
-    public required DateTime Updated_At { get; set;} = DateTime.UtcNow;
+    [Key]
+    public int Id { get; init; }
+    [Required]
+    public DateTime Created_At { get; init; } = DateTime.UtcNow;
+    [Required]
+    public DateTime Updated_At { get; set;} = DateTime.UtcNow;
 }
